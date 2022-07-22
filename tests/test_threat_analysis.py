@@ -29,10 +29,7 @@ def test_threat_str_rep(mock_threats):
     oranges = mock_threats['oranges']
 
     # gen format expected
-    expected = (
-        f'Threat({oranges.name}): p={oranges.probability}'
-        f'/i={oranges.impact})'
-    )
+    expected = f'Threat({oranges.name}): {oranges.relevance}'
 
     # check string representation
     assert expected == oranges.__str__()

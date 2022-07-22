@@ -9,6 +9,7 @@ class Threat():
         self.name = name
         self.probability = probability
         self.impact = impact
+        self.relevance = self.probability * self.impact
         self.mvp = mvp
 
     def __repr__(self) -> str:
@@ -19,10 +20,10 @@ class Threat():
 
     def __str__(self) -> str:
         """Readable string representation of Threat() object"""
-        return f'Threat({self.name}): p={self.probability}/i={self.impact})'
+        return f'Threat({self.name}): {self.relevance}'
 
 
 # functions
 def rank(threats: list[Threat]) -> list[Threat]:
     """Return a sorted listed based on threat probability"""
-    return sorted(threats, key=lambda t: t.probability * t.impact, reverse=True)
+    return sorted(threats, key=lambda t: t.relevance, reverse=True)
