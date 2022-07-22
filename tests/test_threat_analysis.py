@@ -1,5 +1,6 @@
 import pytest
-from threat_analysis import Threat, rank
+from threat.dtypes import Threat
+from threat.analysis import rank
 
 
 # mocking

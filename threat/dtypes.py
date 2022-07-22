@@ -1,4 +1,3 @@
-# classes
 class Threat():
     """Object to encapsulate threat information"""
     def __init__(self,
@@ -21,9 +20,3 @@ class Threat():
     def __str__(self) -> str:
         """Readable string representation of Threat() object"""
         return f'Threat({self.name}): {self.relevance}'
-
-
-# functions
-def rank(threats: list[Threat]) -> list[Threat]:
-    """Return a sorted listed based on threat probability"""
-    return sorted(threats, key=lambda t: t.relevance, reverse=True)
